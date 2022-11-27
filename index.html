@@ -2,7 +2,7 @@
 
 <html dir="ltr" lang="en">
     <head>
-        <title>Carousel</title>
+        <title>My projects</title>
 
         <style>
             * {
@@ -27,10 +27,13 @@
                 background-color: rgb(202, 202, 202);
             }
 
-            h1 {
+            #titles {
                 display: flex;
-                align-items: center;
+                justify-content: center;
+                flex-direction: column;
                 margin-left: 20px;
+
+                width: 30vw;
             }
 
             #bottomwrapper {
@@ -42,7 +45,7 @@
                 flex-direction: column;
 
                 gap: 10px;
-                width: 50vw;
+                width: 70vw;
 
                 overflow: visible;
             }
@@ -52,27 +55,45 @@
                 align-items: center;
                 padding-left: 20px;
 
-                width: 60vw;
-                height: 100px;
+                width: 200vw;
+                height: 7.5vw;
 
                 border-radius: 5px;
 
-                translate: 25vw 0;
-
                 border: 1px solid rgb(0, 0, 0);
+                background-color: rgb(202, 202, 202);
+
+                transition: transform .3s cubic-bezier(0.6, 1.4, 0.45, 1.5),
+                            box-shadow .2s ease-in;
+            }
+
+            #bottom > *:hover {
+                transform: translateX(-5%) scale(1.05);
+                box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+            }
+
+            .nopointer > * {
+                pointer-events: none;
             }
         </style>
     </head>
 
     <body>
         <div id="wrapper">
-            <h1>Carousel</h1>
+            <div id="titles">
+                <h1>My projects!</h1>
+                <h4>Most of these are tests. And are also not very good. And are also unfinished. But here you go anyway.</h4>
+            </div>
+
 
             <div id="bottomwrapper">
                 <div id="bottom"></div>
             </div>
         </div>
 
+
+
+        <script src="scroll.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
